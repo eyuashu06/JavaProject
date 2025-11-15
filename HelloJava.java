@@ -24,11 +24,11 @@ public class HelloJava extends Thread{
     public void run(){
         try{
             Thread.sleep(duration);
+            System.out.println(message);
         }
         catch(InterruptedException e){
             System.out.println(e);
         }
-        System.out.println(message);
        }
     
     
@@ -42,5 +42,18 @@ public class HelloJava extends Thread{
         h2.start();
         h3.start();
 
+        try{
+
+            h1.join();
+            h2.join();
+            h3.join();
+
+            Thread.sleep(10000);
+
+            System.out.println("System Terminated after 10 Seconds");
+        }
+        catch(InterruptedException e){
+            System.out.println(e);
+        }
     }
 }
