@@ -9,6 +9,7 @@ public class JDBConnectivity {
             Connection con = DriverManager.getConnection("jdbc:myqsl://localhost:3306/school", "root", "password");
 
             // create a statemennt that will be used to execute a query
+            String sql = "INSERT INTO SCHOOL('id', 'name', 'age') VALUES(?,?) ";
             Statement stmt = con.createStatement();
 
             // execute the query
